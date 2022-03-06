@@ -1,0 +1,44 @@
+#include <stdio.h>
+
+int main()
+{
+    float grade;
+    grade == 0 >= 100;
+    
+    printf("Enter grade:");
+    scanf("%f", &grade);
+    
+    if(grade == 0)
+    {
+        printf("Invalid input. Try again.");
+    }
+    if ((grade > 0) && ( grade <= 49))
+    {
+        printf("Your letter grade is F.");
+    }
+     if((grade > 50 ) && (grade <= 59))
+    {
+        printf("Your letter grade is D.");
+    }
+    if((grade > 59) && (grade <= 67))
+    {
+        printf("Your letter grade is C. ");
+    }
+    if((grade > 67) && (grade <= 75))
+    {
+        printf("Your letter grade is B-.");
+    }
+    if ((grade > 75) && (grade <= 83))
+    {
+        printf("Your letter grade is B.");
+    }
+    if((grade > 83) && (grade <= 91))
+    {
+        printf("Your letter grade is A-.");
+    }
+    if((grade > 91) && (grade <= 100))
+    {
+        printf("Your  letter grade is A.");
+    }
+    return 0;
+}
