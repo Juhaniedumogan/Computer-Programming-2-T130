@@ -1,0 +1,77 @@
+#include <stdio.h>
+
+int main()
+{
+    float originalTemp,convertedTemp;
+    char select,convert;
+    
+    printf("Input original temperature value:");
+    scanf("%f", &originalTemp);
+    printf("Select original temperature scale:");
+    scanf("\n%c", &select);
+    printf("Select converted temperature scale:");
+    scanf("\n%c", &convert);
+    
+    if(select == 'f' || select == 'F')
+    {
+        if(convert == 'c' || convert == 'C')
+        {
+            convertedTemp = (originalTemp-32) * 5/9;
+        }
+        else if(convert == 'k' || convert == 'K')
+        {
+            convertedTemp = (originalTemp-32) *5/9 +273.15;
+        }
+        else if(convert == 'f' || convert == 'F')
+        {
+            convertedTemp = originalTemp;
+        }
+        else
+        {
+            printf("%c Invalid Input!", convert);
+            
+        }
+    }
+    if(select == 'c' || select == 'C')
+    {
+        if(convert == 'f' || convert == 'F')
+        {
+            convertedTemp = (originalTemp * 5/9) +32;
+        }
+        else if(convert == 'k' || convert == 'K')
+        {
+            convertedTemp = originalTemp + 273.15;
+        }
+        else if(convert == 'c' || convert == 'C')
+        {
+            convertedTemp = originalTemp;
+        }
+        else
+        {
+            printf("%c Invalid Input!", convert);
+            
+        }
+    }
+    if(select == 'k'|| select == 'K')
+    {
+        if(convert == 'f' || convert == 'F')
+        {
+            convertedTemp =  (originalTemp - 273.15) * 9/5 + 32;
+        }
+        else if(convert == 'c' || convert == 'C')
+        {
+            convertedTemp = originalTemp - 273.15;
+        }
+        else if(convert == 'k' || convert == 'K')
+        {
+            convertedTemp = originalTemp;
+        }
+        else
+        {
+            printf("%c Invalid Input!", convert);
+           
+        }
+    }
+    printf("%.2f %c = %.2f %c",originalTemp,select,convertedTemp,convert);
+    return 0;
+}
