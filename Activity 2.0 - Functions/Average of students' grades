@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main()
+{
+    int sub1,sub2,sub3,sub4,sub5,sum;
+    float ave;
+  
+    
+    printf("Enter five numbers:\n");
+    scanf("%d%d%d%d%d",&sub1,&sub2,&sub3,&sub4,&sub5);
+    
+    sum = sub1+sub2+sub3+sub4+sub5;
+    ave = sum /5;
+    printf("average = %f",ave);
+
+
+    return 0;
+}
