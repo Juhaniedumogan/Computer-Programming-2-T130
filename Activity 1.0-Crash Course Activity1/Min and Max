@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main()
+{
+    printf("Input number:");
+    int n = 0;
+    scanf("%d", &n);
+    
+    int min=n, max=n;
+    for(int i=1;i<=9;i++)
+    {
+        printf("Input number:");
+        scanf("%d", &n);
+        
+        min= ((n < min) && ( min <= -1)) ? n : min;
+        max= ((n > max) && (max >= -1)) ? n : max;
+        
+        while(n<0)
+        {
+            printf("This is an invalid input.Try again.\nInput number:");
+            scanf("%d", &n);
+        }
+    }
+    
+    printf("min:%d\nmax:%d", min,max);
+
+    return 0;
+}
