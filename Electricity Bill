@@ -1,0 +1,74 @@
+#include <stdio.h>
+
+float computedUnitCharges(int UnitConsumed)
+{
+    float UnitCharges =0.00;
+    if(UnitConsumed > 0 && UnitConsumed < 250)
+    {
+        UnitCharges = 1.50;
+    }
+    else if(UnitConsumed >= 250 && UnitConsumed <450)
+    {
+        UnitCharges = 1.60;
+    }
+    else if(UnitConsumed >= 450 && UnitConsumed<600)
+    {
+        UnitCharges = 1.85;
+    }
+    else if(UnitConsumed >= 600)
+    {
+        UnitCharges = 2.00;
+    }
+    return UnitCharges;
+}
+float computeCharge(int UnitConsumed, float UnitCharges)
+{
+    float Charge;
+    Charge = UnitConsumed * UnitCharges;
+    return Charge;
+}
+float computeSurcharge (float charge)
+{
+    float Surcharge = 0.00;
+    if(charge > 400)
+    {
+        Surcharge = charge * 0.10;
+    }
+    return Surcharge;
+}
+float computeTotal(float Charge, float Surcharge)
+{
+    float Total;
+    Total = Charge + Surcharge;
+    return Total;
+}
+
+int main()
+{
+    int id, UnitConsumed;
+    float UnitCharges, Charge, Surcharge, Total;
+    printf("Input Customer ID: ");
+    scanf("%d", &id);
+    printf("Input the unit consumed by the customer:");
+    scanf("%d", &UnitConsumed);
+    UnitCharges = computedUnitCharges(UnitConsumed);
+    Charge = computeCharge (UnitConsumed, UnitCharges);
+    Surcharge = computeSurcharge(Charge);
+    Total = computeTotal(Charge, Surcharge);
+    if(Total > 100)
+    {
+        printf("[Electricity Bill]\n");
+        printf("Customer ID#                    %d\n", id);
+        printf("Unit consumed                   %d\n", UnitConsumed);
+        printf("Unit Charges @P. %.2f per unit  %.2f\n", UnitCharges, Charge);
+        printf("SurCharge Amount                %.2f\n", Surcharge);
+        printf("Total Customer Bill             %.2f\n", Total);
+        return 0;
+    }
+    else
+    {
+        printf("Total Bill must be P 100 atleast.");
+        return -1;
+    }
+}
+ 
